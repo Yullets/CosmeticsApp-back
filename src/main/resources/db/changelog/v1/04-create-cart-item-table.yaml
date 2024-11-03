@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: cart_items
+      id: create-cart-items-table
+      author: frolova.ys
+      changes:
+        - createSequence:
+            sequenceName: cart_items_seq
+            startValue: 1
+            incrementBy: 50
+        - createTable:
+            tableName: cart_items
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: cart_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: cart_id
+                    referencedTableName: carts
+                    referencedColumnNames: id
+              - column:
+                  name: product_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: product_id
+                    referencedTableName: products
+                    referencedColumnNames: id
+              - column:
+                  name: quantity
+                  type: int
+                  constraints:
+                    nullable: false

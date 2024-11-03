@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: products
+      id: create-product-table
+      author: frolova.ys
+      changes:
+        - createSequence:
+            sequenceName: products_seq
+            startValue: 1
+            incrementBy: 50
+        - createTable:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: photo_url
+                  type: VARCHAR(100)
+              - column:
+                  name: stock
+                  type: int
+                  constraints:
+                    nullable: false

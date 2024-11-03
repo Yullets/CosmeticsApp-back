@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: order_items
+      id: create-order-items-table
+      author: frolova.ys
+      changes:
+        - createSequence:
+            sequenceName: order_items_seq
+            startValue: 1
+            incrementBy: 50
+        - createTable:
+            tableName: order_items
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: order_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: order_id
+                    referencedTableName: orders
+                    referencedColumnNames: id
+              - column:
+                  name: product_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: product_id
+                    referencedTableName: products
+                    referencedColumnNames: id
+              - column:
+                  name: quantity
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price_at_order
+                  type: bigint
+                  constraints:
+                    nullable: false

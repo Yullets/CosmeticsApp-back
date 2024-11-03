@@ -1,0 +1,172 @@
+databaseChangeLog:
+  - changeSet:
+      preConditions:
+        - onFail: MARK_RAN
+        - sqlCheck:
+            expectedResult: "0"
+            sql: "SELECT COUNT(*) FROM products"
+      id: 07-insert-data-into-product-table
+      author: frolova.ys
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: "Ароматическая свеча/Scented candle"
+              - column:
+                  name: price
+                  valueNumeric: 2500
+              - column:
+                  name: photo_url
+                  value: "https://static.tildacdn.com/tild3065-3438-4861-b639-626336353333/22__.jpg"
+              - column:
+                  name: stock
+                  valueNumeric: 50
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: name
+                  value: "Бутылка для воды/Bottle for water"
+              - column:
+                  name: price
+                  valueNumeric: 2000
+              - column:
+                  name: photo_url
+                  value: "https://static.tildacdn.com/tild3863-3735-4262-b130-356264633430/20__.jpg"
+              - column:
+                  name: stock
+                  valueNumeric: 50
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 3
+              - column:
+                  name: name
+                  value: "Мицеллярная вода с гидролатом алтайских трав/Micellar water, 200 мл"
+              - column:
+                  name: price
+                  valueNumeric: 2500
+              - column:
+                  name: photo_url
+                  value: "https://static.tildacdn.com/tild3235-3138-4630-b666-306134386566/17__.jpg"
+              - column:
+                  name: stock
+                  valueNumeric: 50
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 4
+              - column:
+                  name: name
+                  value: "Дневной крем с фактором защиты SPF20/ Day cream SPF20"
+              - column:
+                  name: price
+                  valueNumeric: 2500
+              - column:
+                  name: photo_url
+                  value: "https://static.tildacdn.com/tild3064-6138-4361-b736-303361336639/12__.jpg"
+              - column:
+                  name: stock
+                  valueNumeric: 50
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 5
+              - column:
+                  name: name
+                  value: "Безсульфатный шампунь для волос/Shampoo sulfate free"
+              - column:
+                  name: price
+                  valueNumeric: 1400
+              - column:
+                  name: photo_url
+                  value: "https://static.tildacdn.com/tild3936-3439-4861-a263-656630343234/15__.jpg"
+              - column:
+                  name: stock
+                  valueNumeric: 50
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 6
+              - column:
+                  name: name
+                  value: "Маска-бальзам с коллагеном для восстановления волос/Mask-balm collagen"
+              - column:
+                  name: price
+                  valueNumeric: 1500
+              - column:
+                  name: photo_url
+                  value: "https://static.tildacdn.com/tild3533-3932-4463-a337-396261383262/16__.jpg"
+              - column:
+                  name: stock
+                  valueNumeric: 50
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 7
+              - column:
+                  name: name
+                  value: "Очищающий гель для умывания с АНА-кислотами/ AHA cleansing gel"
+              - column:
+                  name: price
+                  valueNumeric: 1650
+              - column:
+                  name: photo_url
+                  value: "https://static.tildacdn.com/tild3430-6132-4330-b939-663966643331/4__.jpg"
+              - column:
+                  name: stock
+                  valueNumeric: 50
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 8
+              - column:
+                  name: name
+                  value: "Увлажняющий тоник для лица с аминокислотами/ NMF Toner"
+              - column:
+                  name: price
+                  valueNumeric: 1800
+              - column:
+                  name: photo_url
+                  value: "https://static.tildacdn.com/tild3631-3634-4335-b139-363865333739/3__.jpg"
+              - column:
+                  name: stock
+                  valueNumeric: 50
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 9
+              - column:
+                  name: name
+                  value: "Крем для век с кофеином/ Eye care cream"
+              - column:
+                  name: price
+                  valueNumeric: 2200
+              - column:
+                  name: photo_url
+                  value: "https://static.tildacdn.com/tild3831-6564-4230-b566-356166613436/photo_2024-02-13_17-.jpg"
+              - column:
+                  name: stock
+                  valueNumeric: 50
