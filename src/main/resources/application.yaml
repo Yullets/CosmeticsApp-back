@@ -15,3 +15,9 @@ spring:
         format_sql: true
   liquibase:
     changeLog: db/changelog/master.yaml
+token:
+  signing:
+    accessKey: 53A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A75327855
+    refreshKey: J4H2G8F9E5R7T3Y6U1I9O0P7L5K3J8H3G9F1D7S3A6D8F9G1H2J4K6L7J0K9J8H7
+    accessTokenLifetimeSecs: 1800
+    refreshTokenLifetimeDays: 30
