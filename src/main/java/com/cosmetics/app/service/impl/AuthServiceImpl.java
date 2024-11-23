@@ -48,7 +48,7 @@ public class AuthServiceImpl implements AuthService {
 
     private User createUser(UserRegistrationData userRegistrationData) {
         return User.builder()
-                .fullName(userRegistrationData.getFullName())
+                .fullname(userRegistrationData.getFullName())
                 .email(userRegistrationData.getEmail())
                 .password(passwordEncoder.encode(userRegistrationData.getPassword()))
                 .build();

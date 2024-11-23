@@ -19,7 +19,7 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "refresh_tokens")
+@Table(name = "user_tokens")
 public class RefreshToken {
 
     @Id
