@@ -1,9 +1,7 @@
 package com.cosmetics.app.controller.impl;
 
 import com.cosmetics.app.controller.CartItemController;
-import com.cosmetics.app.entity.Cart;
 import com.cosmetics.app.service.CartItemService;
-import com.cosmetics.app.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,8 +27,8 @@ public class CartItemControllerImpl implements CartItemController {
 
     @Override
     @DeleteMapping()
-    public ResponseEntity<Void> removeItemFromCart(@RequestParam Long productId) {
-        cartItemService.removeItemFromCart(productId);
+    public ResponseEntity<Void> removeItemFromCart(@RequestParam Long cartId) {
+        cartItemService.removeItemFromCartByCartId(cartId);
         return ResponseEntity.ok().build();
     }
 
